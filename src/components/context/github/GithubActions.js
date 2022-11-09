@@ -1,6 +1,6 @@
 import axios from "axios";
-const Github_Url = process.env.REACT_APP_GITHUB_API_URL;
-const Github_Token = process.env.REACT_APP_GITHUB_API_TOKEN;
+const Github_Url = 'https://api.github.com';
+const Github_Token = "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";
 
 const github = axios.create({
   baseURL: Github_Url,
@@ -13,11 +13,10 @@ export const searchAPI = async (text) => {
     q: text,
   });
   const response = await github.get(`/search/users?${params}`);
-  if (response.status === 404 || response.data.items.length === 0) {
-    window.location = "/notfound";
-  } else {
+
+ 
     return response.data.items;
-  }
+
 };
 
 export const getUserAndRepos = async (login) => {
