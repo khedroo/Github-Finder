@@ -1,6 +1,6 @@
 import axios from "axios";
 const Github_Url = 'https://api.github.com';
-const Github_Token = "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";
+const Github_Token = "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";
 
 const github = axios.create({
   baseURL: Github_Url,
